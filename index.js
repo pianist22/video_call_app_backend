@@ -65,7 +65,10 @@ io.on('connection', (socket) => {
 server.listen(8000, () => {
     console.log("Server is running on port 8000");
 });
-app.get('/', (req, res) => {
-  res.send('Server is running');
-});
 
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running",
+    });
+});
