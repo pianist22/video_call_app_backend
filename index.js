@@ -60,4 +60,9 @@ io.on('connection', (socket) => {
 app.listen(8000, () => {
   console.log('Server is running on port 8000');
 });
+
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 io.listen((8001));
